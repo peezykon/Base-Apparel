@@ -1,10 +1,11 @@
-function checkEmail() {
-    var email = document.getElementById('txtEmail');
-    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+const form = document.getElementById('form');
+form.addEventListener("submit", e => {
+    var email = document.getElementById('email').value;
+    var pattern = /^[A-Za-z._]{3,}@[A-Za-z{3,}[.]{1}[A-Za-z.]{2,6}$/;
 
-    if (!filter.test(email.value)) {
-        alert('Please provide a valid email address');
-        email.focus;
-        return false;
+    if (pattern.test(email.value)) {
+
+    } else {
+        document.querySelector('.form-control').classList.add('error')
     }
-}
+})
